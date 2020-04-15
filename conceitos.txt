@@ -1,0 +1,3 @@
+conceitos react (
+    Componente, JSX, Propriedades, Estado, imutabilidade 
+) -> pesquisar 
