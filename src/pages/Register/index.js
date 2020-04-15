@@ -9,7 +9,7 @@ import logo from '../../assets/logo.svg';
 import api from '../../services/api';
 
 export default function Register(){
-    const [nome, setNome] = useState('');
+    const [name, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
     const [city, setCity] = useState('');
@@ -20,7 +20,7 @@ export default function Register(){
     async function handleRegister(e){
         e.preventDefault();
 
-        const data = {nome, email, whatsapp, city, uf};
+        const data = {name, email, whatsapp, city, uf};
         
         try{
             const response = await api.post('ongs', data);
@@ -50,7 +50,7 @@ export default function Register(){
                 <form onSubmit={handleRegister}>
                     <input 
                         placeholder="Nome da ONG"
-                        value={nome}
+                        value={name}
                         onChange={e => setNome(e.target.value)}
                     />
                     <input 
