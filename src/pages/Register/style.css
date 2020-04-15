@@ -19,6 +19,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    flex-wrap: wrap;
 }
 
 .register-container .content section {
@@ -48,6 +50,7 @@
 
 .register-container .content form .input-group{
     display: flex;
+    
 }
 
 .register-container .content form .input-group input + input{
