@@ -6,6 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import logo from '../../assets/logo.svg';
 
+import { Event } from '../../components/Tracking'
 import api from '../../services/api';
 
 export default function Register(){
@@ -78,7 +79,12 @@ export default function Register(){
                         />
                     </div>
                     
-                    <button type="submit" className="button">Cadastro</button>
+                    <button 
+                    type="submit" 
+                    className="button"
+                    onClick={()=>{
+                        Event("Cadastro-ong", "Cadasto de uma ong", "Ong_cadastrada")
+                    }}>Cadastro</button>
                     <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#E02041" />
                         Não tenho cadastro
