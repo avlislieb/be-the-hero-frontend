@@ -80,14 +80,15 @@ export default function Register(){
                     </div>
                     
                     <button 
-                    type="submit" 
-                    className="button"
-                    onClick={()=>{
-                        Event("Cadastro-ong", "Cadasto de uma ong", "Ong_cadastrada")
-                    }}>Cadastro</button>
+                        type="submit" 
+                        className="button"
+                        onClick={()=>{
+                            Event("Cadastro-ong", "Cadasto de uma ong", "Ong_cadastrada")
+                        }}
+                    >Cadastro</button>
                     <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#E02041" />
-                        Não tenho cadastro
+                        Ja tenho um cadastro
                     </Link>
                 </form> 
             </div>
