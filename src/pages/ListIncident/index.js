@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiPower } from 'react-icons/fi';
+import { FaHeart } from 'react-icons/fa';
 
 import api from '../../services/api';
 
+<<<<<<< HEAD
 import logo from '../../assets/Logo.png';
 import iconVoltar from '../../assets/iconBtnVoltar.png';
 import iconCoracao from '../../assets/iconCoracao.png';
 import imgCard from '../../assets/imgCard.png'
+=======
+import logo from '../../assets/logo.png';
+>>>>>>> b925c5c2d87205d5a33f14710868fe223ea37d00
 import './style.css';
 
 export default function ListIncident() {
     const [incidents, setIncidents] = useState([]);
     const history = useHistory();
-    const ongId = localStorage.getItem('ongId');
-    const ongName = localStorage.getItem('ongNome');
 
     useEffect(() => {
         api.get('incidents').then(response => {
@@ -37,10 +40,14 @@ export default function ListIncident() {
                     <img src={iconVoltar} alt="Seta para voltar" id="imgIconVoltar" />
                 </button>
             </header>
+<<<<<<< HEAD
             <div id="titulo">
                 <h1>Todos os Casos</h1>
                 <img src={iconCoracao} alt="icone Coração" />
             </div>
+=======
+            <h1>Todos os casos <FaHeart size="24" color="#00B0FF" /></h1>
+>>>>>>> b925c5c2d87205d5a33f14710868fe223ea37d00
 
             <ul className="list-casos">
                 <li>

@@ -5,10 +5,15 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi'
 import './style.css';
 
+<<<<<<< HEAD
 import imgLogon from '../../assets/image-Logon.png';
 import logo from '../../assets/Logo.png';
 import iconBtn from '../../assets/iconBtn.png';
 import iconCoracao from '../../assets/iconCoracao.png'
+=======
+import heroesImg from '../../assets/heroestwo.png';
+import logo from '../../assets/logo.png';
+>>>>>>> b925c5c2d87205d5a33f14710868fe223ea37d00
 
 import api from '../../services/api';
 
