@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import './style.css';
 
 import { FiArrowLeft } from 'react-icons/fi';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/Logo.png';
 
 import api from '../../services/api';
 

@@ -4,10 +4,13 @@ import { FiPower, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/Logo.png';
+import iconVoltar from '../../assets/iconBtnVoltar.png';
+import iconCoracao from '../../assets/iconCoracao.png';
+import imgCard from '../../assets/imgCard.png'
 import './style.css';
 
-export default function ListIncident(){
+export default function ListIncident() {
     const [incidents, setIncidents] = useState([]);
     const history = useHistory();
     const ongId = localStorage.getItem('ongId');
@@ -19,7 +22,7 @@ export default function ListIncident(){
         })
     }, []);
 
-    async function handleLogout(){
+    async function handleLogout() {
         localStorage.clear();
         history.push('/');
     }
@@ -28,14 +31,37 @@ export default function ListIncident(){
         <div className="incidents-container">
 
             <header>
-                <img src={logo} alt="Be The Hero"/>
+                <img src={logo} alt="Dog Help!" />
 
                 <button onClick={handleLogout} type="button">
-                    <FiPower size="18" color="#E02041" />
+                    <img src={iconVoltar} alt="Seta para voltar" id="imgIconVoltar" />
                 </button>
             </header>
-            <h1>Casos cadastrados</h1>
+            <div id="titulo">
+                <h1>Todos os Casos</h1>
+                <img src={iconCoracao} alt="icone Coração" />
+            </div>
 
+            <ul className="list-casos">
+                <li>
+                    <div className="list-grupo">
+                        <img src={imgCard} alt="Cachorro do caso" id="imgCard"/>
+                    </div>
+                    <div className="list-grupo-detalhes">
+                        <p>Cachorro Precisa de Ajuda</p>
+
+                        <strong>DESCRIÇÃO:</strong>
+                        <p>Descrição</p>
+
+                        <strong>VALOR:</strong>
+                        <p>R$100,00</p>
+
+                        <Link>
+                            <button>Detalhes</button>
+                        </Link>
+                    </div>
+                </li>
+            </ul>
             <ul className="list-incidents">
                 {incidents.map(incident => (
                     <li key={incident.id}>
@@ -46,12 +72,12 @@ export default function ListIncident(){
                         <p>{incident.description}</p>
 
                         <strong>VALOR:</strong>
-                        <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value)}</p>
+                        <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</p>
 
                         <Link to={`/incidents/show/${incident.id}`}>
-                            <button>Detalhes</button>
+                            <button className="btnDetalhes">Detalhes</button>
                         </Link>
-                        
+
                     </li>
                 ))}
             </ul>

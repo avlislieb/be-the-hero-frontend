@@ -1,17 +1,18 @@
 .register-container{
     width: 100%;
     max-width: 1120px;
-    height: 100vh;
+    height: 20vh;
     margin: 0 auto;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .register-container .content{
-    width: 100%;
-    padding: 96px;
+    width: 40%;
+    padding: 25px;
     background: #f0f0f5;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
@@ -50,8 +51,45 @@
 
 .register-container .content form .input-group{
     display: flex;
+    justify-content: space-between;
 }
 
 .register-container .content form .input-group input + input{
     margin-left: 8px;
+}
+
+.register-container .content form .telefone-grupo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.telefone-grupo, .input-group, .email-grupo, .senha-grupo {
+    margin-top: 10px;
+}
+
+form .telefone-ddd {
+    width: 15%;
+}
+
+form .telefone-numero {
+    width: 80%;
+}
+
+h1#titulo {
+    position: absolute;
+    left: 45%;
+    top: 5%;
+    font-size: 35px;
+}
+
+button#btnCadastrar {
+    background: #15E818;
+}
+
+img#imgCachorro {
+    position: absolute;
+    left: 60%;
+    bottom: 0;
+    height: 20rem;
 }

@@ -46,3 +46,43 @@
 .logon-container section.form form a:hover {
     opacity: 0.8;
 }
+
+.logon-container div.doacoes {
+    display: flex;
+    align-items: inherit;
+    position: absolute;
+    bottom: 10%;
+    left: 68%;
+    font-weight: 500;
+}
+
+.logon-container div.doacoes span {
+    margin-right: 8px;
+}
+
+button#btnAjudar {
+    background: #15E818;
+}
+
+button#btnLogin {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+button#btnLogin img {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+div.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: self-start;
+}
+
+#imgLateral {
+    height: 60vh;
+}

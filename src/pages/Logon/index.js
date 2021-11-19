@@ -5,8 +5,10 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi'
 import './style.css';
 
-import heroesImg from '../../assets/heroes.png';
-import logo from '../../assets/logo.svg';
+import imgLogon from '../../assets/image-Logon.png';
+import logo from '../../assets/Logo.png';
+import iconBtn from '../../assets/iconBtn.png';
+import iconCoracao from '../../assets/iconCoracao.png'
 
 import api from '../../services/api';
 
@@ -29,34 +31,38 @@ export default function Logon(){
     return (
         <div className="logon-container">
             <section className="form">
-                <img src={logo} alt="Be The Hero"/>
+                <img src={logo} alt="Dog Help!"/>
 
                 <div className="div-help">
                     <p>Doe ou adote, e faça um pet feliz.</p>
                     
                     <Link to="/incidents"> 
-                        <button className="button">Ajudar</button>
+                        <button className="button" id="btnAjudar">Ajudar</button>
                     </Link>
                 </div>
 
                 <form onSubmit={handleLogin}>
-                    <h1>Faça seu logon</h1>
+                    <h1>Cadastre sua ONG</h1>
 
-                    <input 
+                    {/* <input 
                         placeholder="sua ID"
                         value={id}
                         onChange={e => setId(e.target.value)}
-                    />
-                    <button className="button" type="submit">Login</button>
+                    /> */}
+                    <div className="botoes">
+                        <button className="button" type="submit" id="btnLogin">Login <img src={iconBtn} alt="icone seta"/></button>
 
-                    <Link className="back-link" to="/register">
-                        <FiLogIn size={16} color="#E02041" />
-                        Cadastre-se
-                    </Link>
+                        <Link className="back-link" to="/register">
+                            Cadastre-se
+                        </Link>
+                    </div>
                 </form>
             </section>
-
-            <img src={heroesImg} alt="Heroes"/>
+            <img src={imgLogon} alt="Heroes" id="imgLateral"/>
+            <div className="doacoes" id="doacoesFeitas">
+                <span>Dogs Ajudados 10</span>
+                <img src={iconCoracao} alt="icone Coração" />
+            </div>
         </div>
     );
 }

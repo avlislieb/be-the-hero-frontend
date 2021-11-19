@@ -4,7 +4,7 @@ import { FiPower, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/Logo.png';
 import './style.css';
 
 export default function Profile(){

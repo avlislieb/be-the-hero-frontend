@@ -4,12 +4,13 @@ import './style.css';
 import { Link, useHistory } from 'react-router-dom';
 
 import { FiArrowLeft } from 'react-icons/fi';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/Logo.png';
+import iconeCachorro from '../../assets/iconeCachorroCadastroOng.png';
 
 import { Event } from '../../components/Tracking'
 import api from '../../services/api';
 
-export default function Register(){
+export default function Register() {
     const [name, setNome] = useState('');
     const [email, setEmail] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
@@ -18,16 +19,16 @@ export default function Register(){
 
     const history = useHistory();
 
-    async function handleRegister(e){
+    async function handleRegister(e) {
         e.preventDefault();
 
-        const data = {name, email, whatsapp, city, uf};
-        
-        try{
+        const data = { name, email, whatsapp, city, uf };
+
+        try {
             const response = await api.post('ongs', data);
             alert(`Seu ID de acesso: ${response.data.id}`);
             history.push('/');
-        }catch(err){
+        } catch (err) {
             alert('Erro no cadastro, tente novamente.');
             console.log(err);
         }
@@ -35,13 +36,10 @@ export default function Register(){
 
     return (
         <div className="register-container">
+            <img src={logo} alt="Dog Help!" />
+            <h1 id="titulo">Cadastro</h1>
             <div className="content">
                 <section>
-                    <img src={logo} alt="Be The Hero"/>
-
-                    <h1>Cadastro</h1>
-                    <p>Faça seu cadastro, entre na plataforma e ajude pessoas a encontratem os casos de sua ONG.</p>
-
                     {/* <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#E02041" />
                         Não tenho cadastro
@@ -49,50 +47,73 @@ export default function Register(){
                 </section>
 
                 <form onSubmit={handleRegister}>
-                    <input 
-                        placeholder="Nome da ONG"
+                    <p> Nome da ONG </p>
+                    <input
                         value={name}
                         onChange={e => setNome(e.target.value)}
                     />
-                    <input 
-                        type="email" 
-                        placeholder="E-mail"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}    
-                    />
-                    <input 
-                        placeholder="WhatsApp"
-                        value={whatsapp}
-                        onChange={e => setWhatsapp(e.target.value)}      
-                    />
+
                     <div className="input-group">
-                        <input 
-                            placeholder="Cidade"
-                            value={city}
-                            onChange={e => setCity(e.target.value)}   
-                        />
-                        <input 
-                            placeholder="UF" 
-                            style={{ width: 80, }}
-                            value={uf}
-                            onChange={e => setUf(e.target.value)}       
+                        <div className="grupo-uf">
+                            <p> UF </p>
+                            <input
+                                style={{ width: 110, }}
+                                value={uf}
+                                onChange={e => setUf(e.target.value)}
+                            />
+                        </div>
+                        <div className="grupo-cidade">
+                            <p> Cidade </p>
+                            <input
+                                value={city}
+                                onChange={e => setCity(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="telefone-grupo">
+                        <div className="telefone-ddd">
+                            <p> Tel </p>
+                            <input type="DDD"
+                            />
+                        </div>
+                        <div className="telefone-numero">
+                            <input type="tel"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="email-grupo">
+                        <p> E-mail </p>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
                         />
                     </div>
-                    
-                    <button 
-                        type="submit" 
+
+                    <div className="senha-grupo">
+                        <p> Senha </p>
+                        <input
+                            type="password"
+                        />
+                    </div>
+
+                    <button id="btnCadastrar"
+                        type="submit"
                         className="button"
-                        onClick={()=>{
+                        onClick={() => {
                             Event("Cadastro-ong", "Cadasto de uma ong", "Ong_cadastrada")
                         }}
-                    >Cadastro</button>
-                    <Link className="back-link" to="/">
+                    >Finalizar</button>
+
+                    {/* <Link className="back-link" to="/">
                         <FiArrowLeft size={16} color="#E02041" />
                         Ja tenho um cadastro
-                    </Link>
-                </form> 
+                    </Link> */}
+                </form>
             </div>
-            
+            <img src={iconeCachorro} alt="Cachorro com olhar de caridade" id="imgCachorro" />
         </div>
     );
 }
