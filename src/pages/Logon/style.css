@@ -1,4 +1,4 @@
-.logon-container{
+.logon-container {
     width: 100%;
     max-width: 1120px;
     height: 100vh;
@@ -7,6 +7,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.logon-container img {
+    display: block;
+    margin-right: -50px;
+}
+
+.logon-container section img {
+    display: block;
+    margin: 0 auto;
 }
 
 .logon-container section.form {
@@ -43,6 +53,7 @@
 .logon-container section.form form a svg {
     margin-right: 8px;
 }
+
 .logon-container section.form form a:hover {
     opacity: 0.8;
 }

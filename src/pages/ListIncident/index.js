@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiPower } from 'react-icons/fi';
+import { FaHeart } from 'react-icons/fa';
 
 import api from '../../services/api';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import './style.css';
 
 export default function ListIncident(){
     const [incidents, setIncidents] = useState([]);
     const history = useHistory();
-    const ongId = localStorage.getItem('ongId');
-    const ongName = localStorage.getItem('ongNome');
 
     useEffect(() => {
         api.get('incidents').then(response => {
@@ -34,7 +33,7 @@ export default function ListIncident(){
                     <FiPower size="18" color="#E02041" />
                 </button>
             </header>
-            <h1>Casos cadastrados</h1>
+            <h1>Todos os casos <FaHeart size="24" color="#00B0FF" /></h1>
 
             <ul className="list-incidents">
                 {incidents.map(incident => (

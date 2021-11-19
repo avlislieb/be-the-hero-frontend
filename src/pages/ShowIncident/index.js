@@ -6,7 +6,7 @@ import { BsArrowLeft } from 'react-icons/bs';
 
 import api from '../../services/api';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 import './style.css';
 
 export default function ShowIncident(){

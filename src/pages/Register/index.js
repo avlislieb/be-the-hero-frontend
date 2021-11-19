@@ -4,7 +4,7 @@ import './style.css';
 import { Link, useHistory } from 'react-router-dom';
 
 import { FiArrowLeft } from 'react-icons/fi';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 import { Event } from '../../components/Tracking'
 import api from '../../services/api';

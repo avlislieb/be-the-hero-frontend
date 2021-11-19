@@ -5,8 +5,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi'
 import './style.css';
 
-import heroesImg from '../../assets/heroes.png';
-import logo from '../../assets/logo.svg';
+import heroesImg from '../../assets/heroestwo.png';
+import logo from '../../assets/logo.png';
 
 import api from '../../services/api';
 
