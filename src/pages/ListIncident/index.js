@@ -5,14 +5,10 @@ import { FaHeart } from 'react-icons/fa';
 
 import api from '../../services/api';
 
-<<<<<<< HEAD
-import logo from '../../assets/Logo.png';
+import logo from '../../assets/logo.png';
 import iconVoltar from '../../assets/iconBtnVoltar.png';
 import iconCoracao from '../../assets/iconCoracao.png';
-import imgCard from '../../assets/imgCard.png'
-=======
-import logo from '../../assets/logo.png';
->>>>>>> b925c5c2d87205d5a33f14710868fe223ea37d00
+import imgCard from '../../assets/imgCard.png';
 import './style.css';
 
 export default function ListIncident() {
@@ -40,14 +36,10 @@ export default function ListIncident() {
                     <img src={iconVoltar} alt="Seta para voltar" id="imgIconVoltar" />
                 </button>
             </header>
-<<<<<<< HEAD
             <div id="titulo">
                 <h1>Todos os Casos</h1>
                 <img src={iconCoracao} alt="icone Coração" />
             </div>
-=======
-            <h1>Todos os casos <FaHeart size="24" color="#00B0FF" /></h1>
->>>>>>> b925c5c2d87205d5a33f14710868fe223ea37d00
 
             <ul className="list-casos">
                 <li>
